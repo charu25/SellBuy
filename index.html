@@ -1,0 +1,146 @@
+<html>
+
+<script type="text/javascript">
+
+  
+	function show(k)
+	  {  console.log(k);
+
+	  	 if (k==1) {
+	  	 	document.getElementById("books1").style.display="block"; 
+	  	   document.getElementById("cycles").style.display="none"; 
+	  	   document.getElementById("electronics").style.display="none"; 
+           document.getElementById("others").style.display="none";
+           document.getElementById("books_acads").style.display="none";
+           document.getElementById("books_non").style.display="none";
+	      }
+	  	 
+	  	 if(k==2)
+	  	  {document.getElementById("books1").style.display="none"; 
+	  	   document.getElementById("cycles").style.display="block"; 
+	  	   document.getElementById("electronics").style.display="none"; 
+           document.getElementById("others").style.display="none";
+           document.getElementById("books_acads").style.display="none";
+           document.getElementById("books_non").style.display="none";
+	      }
+         if(k==3){
+         	document.getElementById("electronics").style.display="block"; 
+         	document.getElementById("books1").style.display="none"; 
+	  	   document.getElementById("cycles").style.display="none"; 
+           document.getElementById("others").style.display="none";
+           document.getElementById("books_acads").style.display="none";
+           document.getElementById("books_non").style.display="none";
+	      }
+
+         if(k==4){document.getElementById("books1").style.display="none"; 
+	  	   document.getElementById("cycles").style.display="none"; 
+	  	   document.getElementById("electronics").style.display="none"; 
+           document.getElementById("others").style.display="block";
+           document.getElementById("books_acads").style.display="none";
+           document.getElementById("books_non").style.display="none";
+	      }
+
+         if(k==5){
+	  	   document.getElementById("cycles").style.display="none"; 
+	  	   document.getElementById("electronics").style.display="none"; 
+           document.getElementById("others").style.display="none";
+           document.getElementById("books_acads").style.display="block";
+           document.getElementById("books_non").style.display="none";
+	      }
+
+         if(k==6){	
+	  	   document.getElementById("cycles").style.display="none"; 
+	  	   document.getElementById("electronics").style.display="none"; 
+           document.getElementById("others").style.display="none";
+           document.getElementById("books_acads").style.display="none";
+           document.getElementById("books_non").style.display="block";
+	      }
+
+
+	  }
+</script>
+
+
+
+<body>
+   	
+    <form name="he" method="post" action="test">
+      <input type="radio" id="bks" value="1" name="rad" onclick="show(1)"> Books
+      <input type="radio" id="cle" value="2" name="rad" onclick="show(2)"> Cycle
+      <input type="radio" id="elect" value="3" name="rad" onclick="show(3)">Electronics
+      <input type="radio" name="rad" value="4" id="oth" onclick="show(4)"> Others
+ 
+
+
+   	
+      <div id="cycles" name="cycles" style="display:none"> 
+       Type: <select name="ctype" id="ctype">
+         <option value="1">Girls</option>
+         <option value="2">Boys</option>
+         <option value="3">Unisex</option>
+       </select>
+       <br>
+       Brand: <input type="text" name="cbrand"> 
+       <br>
+       Colour:<input type="text" name="ccolour">
+       <br>
+       Other:<input type="text" name="cother" size="100"  > 
+       <br>
+    </div>
+
+
+
+<div id="books1" style="display:none">   
+  <input type="radio" name="books2" value="1" onclick="show(5)">Acads
+  <input type="radio" name="books2" value="2" onclick="show(6)">Non
+</div>
+
+
+<div name="books_acads" id="books_acads" style="display:none">
+Department<select id="dept" >
+	<option value="1">MME</option>
+	<option value="2">CSE</option>
+	<option value="3">ICE</option>
+	<option value="4">MECH</option>
+</select>
+<br>
+Semester<select id="semester">
+	<option value="1">1</option>
+	<option value="2">2</option>
+	<option value="3">3</option>
+	<option value="4">4</option>
+</select>
+  <br>
+Title: <input type="text" name="abtitle" id="abtitle">
+<br>
+Author:<input type="text" id="abauthor">
+</select>
+</div>
+
+<div id="books_non" style="display:none">
+Title<input type="text" id="nbtitle"  ><br>
+Author<input type="text" id="nbbauthor"  ><br>
+Genre<input type="text" id="nbgenre"  ><br>
+</div>
+
+
+
+<div id="electronics" style="display:none">
+Item<input type="text" id="elecitem"  ><br>
+Brand<input type="text" id="elecbrand"  > 
+</div>
+
+<div id="others" style="display:none"> other<input type="number" id="ot"   > </div>
+
+<input type="submit" id="submit" value="submit">
+
+    </form>
+  
+
+
+</body>
+
+
+
+</html>
+
