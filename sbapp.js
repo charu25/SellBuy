@@ -18,6 +18,32 @@ app.get('/', function(req, res){
   res.sendfile(__dirname + '/index.html');
 });
 
+app.get('/bids', function(req, res){
+  res.sendfile(__dirname + '/bids.html');
+  });
+
+app.post('/profile', function(req, res){
+
+    MongoClient.connect('mongodb://localhost:27017/mydb', function(err, db) {
+    if(err) throw err;
+
+  var collection = db.collection('sellbuy');
+
+  collection.find({name:req.body.name}).toArray(function(err, results) {
+        console.dir(results);
+        res.send(results);
+        db.close();
+      });
+
+
+  })
+  
+  
+  });
+
+
+
+
 app.post('/test',function(req, res){
   var ip=req.body;
   var data={};
@@ -42,10 +68,8 @@ app.post('/test',function(req, res){
         console.log(format("count = %s", count));
       });
 
-      // Locate all the entries using find
       collection.find().toArray(function(err, results) {
         console.dir(results);
-        // Let's close the db
         db.close();
       });
     });
