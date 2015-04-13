@@ -2,10 +2,12 @@ var mongoose = require( 'mongoose' );
 
 var Schema   = mongoose.Schema;
 
-var Profile = new Schema({
-    user_id    : String,
+var customer = new Schema({
+    Name    : String,
     Pwd    : String,
-    updated_at : Date
+    updated_at : Date,
+    items:Array,
+    status:Array
 });
 
 var books = new Schema({
@@ -48,6 +50,7 @@ var electronics = new Schema({
 // mongoose.model( 'Profile', profile );
 mongoose.model( 'books', books );
 mongoose.model( 'cycles', cycles );
+mongoose.model( 'customer', customer );
 
 
 mongoose.connect( 'mongodb://localhost/sellbuy' );

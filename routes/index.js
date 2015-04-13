@@ -55,6 +55,8 @@ exports.create_items = function ( req, res, next ){
 
     
 }
+
+data["Posted"]=Date.now();
   console.log(data);
   
   console.log(req.body);
@@ -125,6 +127,53 @@ exports.createprofile=function(req,res){
       
 
 };
+
+
+exports.createprofilev1=function(req,res){
+  // mongoose.connect( 'mongodb://localhost/mydb' );
+  customer.find({Name:req.body.name},function (err, customerlist) {
+  if (err) return console.error(err);
+  console.log(customerlist);
+  results=customerlist;
+});
+  
+  // list=['Name','Posted','Title'];
+  // fs.readFile('/home/charu/nodeprog/sellBuy/profile.html', function (err, data) {
+  //   if (err) throw err;
+    
+
+  //   $ = cheerio.load(data);
+  //   var content = "<table>"
+  //   i=0;
+  //   for(i=0;i<results.length;i++){
+  //     value=results[i];
+  //     content+='<tr>';
+  //     for(ip in value){
+  //           if(list.indexOf(ip)>-1){
+  //             // console.log(ip,value[ip]);
+  //             content += '<td>' + ip +" : "+  value[ip] + '</td>';}
+        
+       
+  //     }
+  //     content+='<td><input type="button" name="end auction" value="end"/></td></tr>'; //add redirection using location.replace
+  //   }
+
+  //    content += "</table>"
+
+  //       $('#profile').append(content);
+
+
+  //       filename='/home/charu/nodeprog/sellBuy/'+req.body.name+'.html';
+  //       res.send($.html());
+
+    
+
+    
+  // });
+      
+
+};
+
 
 
 exports.destroy = function ( req, res, next ){

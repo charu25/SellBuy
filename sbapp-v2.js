@@ -35,7 +35,7 @@ app.get('/bids', function(req, res){
 
 
 app.post( '/create_items',      routes.create_items );
-app.post('/profile',routes.createprofile);
+app.post('/profile',routes.createprofilev1);
 
 
 // app.get(  '/destroy/:id', routes.destroy );

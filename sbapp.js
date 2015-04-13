@@ -4,6 +4,10 @@ var http = require("http");
 var MongoClient = require('mongodb').MongoClient
     , format = require('util').format;
 
+var fs = require("fs");
+var cheerio = require("cheerio");
+var assert = require("assert");
+
 
 app.configure(function() {
     app.use(express.static(__dirname));
@@ -30,8 +34,13 @@ app.post('/profile', function(req, res){
   var collection = db.collection('sellbuy');
 
   collection.find({name:req.body.name}).toArray(function(err, results) {
-        console.dir(results);
         res.send(results);
+
+  fs.readFile('/home/charu/nodeprog/sellBuy/profile.html', function (err, data) {
+    if (err) throw err;
+    $ = cheerio.load(data);
+    
+  });
         db.close();
       });
 
@@ -40,6 +49,9 @@ app.post('/profile', function(req, res){
   
   
   });
+
+
+
 
 
 
