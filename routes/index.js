@@ -107,7 +107,7 @@ exports.createprofile=function(req,res){
         
        
       }
-      content+='<td><input type="button" name="end auction" value="end"/></td></tr>';
+      content+='<td><input type="button" name="end auction" value="end"/></td></tr>'; //add redirection using location.replace
     }
 
      content += "</table>"
